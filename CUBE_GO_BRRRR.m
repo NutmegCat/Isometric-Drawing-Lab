@@ -6,7 +6,6 @@ figure(1);
 hold on;
 axis equal;
 view(3);  % set view to 3D
-grid on;
 
 % set transparency level (0 = fully transparent, 1 = fully opaque)
 transparency = 0.6;  % 60% opaque, 40% transparent
