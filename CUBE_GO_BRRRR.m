@@ -1,4 +1,4 @@
-% Define the cube heights from the given diagram
+% Define the cube heights from the given diagram 
 heights = [1 1; 1 2; 2 1];  % Shape as per the grid
 
 % Initialize the figure
@@ -21,16 +21,23 @@ for i = 1:size(heights, 1)
         % Top coordinates of the cube
         z_top = [h, h, h, h];
         
+        % Select color based on the height of the cube
+        if h == 2
+            color = 'red';   % Red for height 2
+        else
+            color = 'blue';  % Blue for height 1
+        end
+        
         % Draw the vertical walls (sides of the cube)
         wall_x = [x_base; x_base];
         wall_y = [y_base; y_base];
         wall_z = [z_base; z_top];
         for k = 1:4
-            patch(wall_x(:, k), wall_y(:, k), wall_z(:, k), 'yellow');
+            patch(wall_x(:, k), wall_y(:, k), wall_z(:, k), color);
         end
         
         % Draw the top face
-        patch(x_base, y_base, z_top, 'cyan');
+        patch(x_base, y_base, z_top, color);
     end
 end
 
@@ -38,5 +45,5 @@ end
 xlabel('X');
 ylabel('Y');
 zlabel('Z');
-title('Simple Isometric Drawing of the Shape');
+title('Isometric Drawing with Color-coded Heights');
 hold off;
