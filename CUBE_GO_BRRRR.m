@@ -2,7 +2,7 @@
 heights = [1 1; 1 2; 2 1];  % shape as per the grid
 
 % initialize the figure
-figure;
+figure(1);
 hold on;
 axis equal;
 view(3);  % set view to 3D
