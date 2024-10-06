@@ -28,16 +28,21 @@ for i = 1:size(heights, 1)
             color = 'blue';  % Blue for height 1
         end
         
-        % Draw the vertical walls (sides of the cube)
-        wall_x = [x_base; x_base];
-        wall_y = [y_base; y_base];
-        wall_z = [z_base; z_top];
+        % Draw the vertical walls (sides of the cube) with color
         for k = 1:4
-            patch(wall_x(:, k), wall_y(:, k), wall_z(:, k), color);
+            wall_x = [x_base(k), x_base(mod(k, 4)+1)];
+            wall_y = [y_base(k), y_base(mod(k, 4)+1)];
+            wall_z = [z_base(k), z_top(k)];
+            patch([wall_x(1) wall_x(2) wall_x(2) wall_x(1)], ...
+                  [wall_y(1) wall_y(2) wall_y(2) wall_y(1)], ...
+                  [0 0 z_top(k) z_top(k)], color);
         end
         
         % Draw the top face
         patch(x_base, y_base, z_top, color);
+        
+        % Draw the bottom face for visibility
+        patch(x_base, y_base, z_base, color);
     end
 end
 
@@ -45,5 +50,5 @@ end
 xlabel('X');
 ylabel('Y');
 zlabel('Z');
-title('Isometric Drawing with Color-coded Heights');
+title('Color-Coded Cubes by Height');
 hold off;
