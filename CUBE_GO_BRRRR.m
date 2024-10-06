@@ -1,5 +1,5 @@
 % Define the cube heights from the given diagram
-heights = [2 1; 1 2; 1 1];  % Shape as per the grid
+heights = [1 1; 1 2; 2 1];  % Shape as per the grid
 
 % Initialize the figure
 figure;
