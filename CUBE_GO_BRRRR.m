@@ -1,4 +1,3 @@
-% define the cube heights from the given diagram
 heights = [1 1; 1 2; 2 1];  % shape as per the grid
 
 % initialize the figure
