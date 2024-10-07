@@ -15,22 +15,22 @@ for i = 1:size(heights, 1)
     for j = 1:size(heights, 2)
         h = heights(i, j);  % height of the current cube
 
-        % base coordinates of the cube
+        % base coordinates 
         x_base = [j-1, j, j, j-1];
         y_base = [i-1, i-1, i, i];
         z_base = [0, 0, 0, 0];
 
-        % top coordinates of the cube
+        % top coordinates 
         z_top = [h, h, h, h];
 
-        % select color based on the height of the cube
+        % select color based on the height 
         if h == 2
             color = 'red';   % red for height 2
         else
             color = 'blue';  % blue for height 1
         end
 
-        % draw the vertical walls (sides of the cube) with transparency
+        % draw the vertical walls with transparency
         for k = 1:4
             wall_x = [x_base(k), x_base(mod(k, 4)+1)];
             wall_y = [y_base(k), y_base(mod(k, 4)+1)];
