@@ -7,8 +7,8 @@ hold on;
 axis equal;
 view(3);  % set view to 3D
 
-% set transparency level (0 = fully transparent, 1 = fully opaque)
-transparency = 0.6;  % 60% opaque, 40% transparent
+% set transparency
+transparency = 0.6;  
 
 % function to create each cube
 for i = 1:size(heights, 1)
